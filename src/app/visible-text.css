@@ -1,0 +1,21 @@
+/* Estilos para hacer el texto visible */
+
+.hero-description {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.hero-features {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.hero-features span {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+/* Clase específica para forzar texto blanco */
+.force-white-text {
+  color: #ffffff !important;
+}
