@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Clock, Shield, Heart, Star, CheckCircle, Zap, Award, Camera } from 'lucide-react';
+import { Clock, Shield, Heart, Star, CheckCircle, Zap, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
@@ -21,7 +21,7 @@ export default function Servicios() {
               Nuestros <span className="text-primary-600">Servicios</span>
             </h1>
             <p className="text-xl leading-relaxed mb-8">
-              Tecnología de vanguardia para el cuidado dental de tu mascota, sin anestesia y con resultados inmediatos
+              Tecnología avanzada para el cuidado dental de tu mascota, sin anestesia y con resultados inmediatos
             </p>
           </AnimatedSection>
         </div>
@@ -43,14 +43,14 @@ export default function Servicios() {
               
               <p className="text-lg text-gray-600 leading-relaxed">
                 Nuestro servicio estrella utiliza tecnología de ultrasonido de última generación para realizar 
-                una limpieza dental profunda y efectiva, completamente sin anestesia y sin el uso de curetas 
+                una limpieza dental profunda y efectiva, completamente sin anestesia general y sin el uso de curetas 
                 tradicionales.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   { icon: Clock, text: 'Duración: 40 minutos' },
-                  { icon: Shield, text: '100% sin anestesia' },
+                  { icon: Shield, text: '100% sin anestesia general' },
                   { icon: Heart, text: 'Sin estrés para tu mascota' },
                   { icon: Star, text: 'Resultados inmediatos' },
                 ].map((feature, index) => (
@@ -65,7 +65,7 @@ export default function Servicios() {
               
               <Button 
                 size="lg" 
-                href="https://wa.me/1234567890"
+                href="https://wa.me/573150340084"
                 className="!text-black hover:!text-white"
               >
                 Agendar cita ahora
@@ -248,7 +248,7 @@ export default function Servicios() {
               {
                 icon: Shield,
                 title: 'Seguridad Total',
-                description: 'Sin riesgos de anestesia. Ideal para perros mayores, cardíacos o con problemas de salud.',
+                description: 'Sin riesgos de anestesia general. Ideal para perros mayores o con problemas de salud.',
                 benefits: ['Sin efectos secundarios', 'Apto para todas las edades', 'Sin tiempo de recuperación']
               },
               {
@@ -360,6 +360,103 @@ export default function Servicios() {
         </div>
       </AnimatedSection>
 
+      {/* Instagram Videos Section */}
+      <AnimatedSection className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Videos de nuestros procedimientos
+            </h2>
+            <p className="text-xl text-gray-600">
+              Observa de primera mano cómo realizamos nuestros tratamientos dentales
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Video 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="aspect-[9/16] bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                <div className="text-center text-primary-600">
+                  <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                  <p className="text-xs font-medium">Video en vivo</p>
+                </div>
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold text-gray-900 text-sm mb-1">Proceso completo</h3>
+                <p className="text-xs text-gray-600">40 minutos de tratamiento</p>
+              </div>
+            </motion.div>
+
+            {/* Video 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="aspect-[9/16] bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                <div className="text-center text-primary-600">
+                  <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                  <p className="text-xs font-medium">Antes y después</p>
+                </div>
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold text-gray-900 text-sm mb-1">Resultados increíbles</h3>
+                <p className="text-xs text-gray-600">Comparación visual</p>
+              </div>
+            </motion.div>
+
+            {/* Video 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="aspect-[9/16] bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                <div className="text-center text-primary-600">
+                  <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                  <p className="text-xs font-medium">Testimonio</p>
+                </div>
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold text-gray-900 text-sm mb-1">Cliente satisfecho</h3>
+                <p className="text-xs text-gray-600">Experiencia real</p>
+              </div>
+            </motion.div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-gray-500 mb-4">
+              *Contenido actualizado desde nuestro Instagram
+            </p>
+            <Button variant="outline" href="https://instagram.com/dentalvets">
+              Síguenos en Instagram
+            </Button>
+          </div>
+        </div>
+      </AnimatedSection>
+
       {/* CTA Section */}
       <AnimatedSection className="py-16 bg-gradient-to-r from-primary-600 to-primary-700">
         <div className="container mx-auto px-4 text-center">
@@ -377,7 +474,7 @@ export default function Servicios() {
               Agenda tu cita ahora y únete a los cientos de dueños satisfechos con nuestro servicio
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" href="https://wa.me/1234567890">
+              <Button size="lg" variant="secondary" href="https://wa.me/573150340084">
                 Agendar cita por WhatsApp
               </Button>
               <Button size="lg" variant="outline" href="/contacto">

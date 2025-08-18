@@ -21,24 +21,21 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div 
-              className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-lg p-2"
-              style={{ backgroundColor: '#6395b2' }}
-            >
-              <Image 
-                src="https://res.cloudinary.com/dge1sssip/image/upload/v1755071368/Captura_de_pantalla_2025-08-13_a_la_s_2.49.15_a.m._ridxre.png"
-                alt="DentalVets Logo"
-                width={24}
-                height={24}
-                className="object-contain"
-              />
+            
+            <div className="flex flex-col">
+              <span 
+                className="text-xl font-bold"
+                style={{ color: '#2a4355' }}
+              >
+                DentalVets
+              </span>
+              <span 
+                className="text-xs"
+                style={{ color: '#497b9b' }}
+              >
+                Odontólogos Veterinarios
+              </span>
             </div>
-            <span 
-              className="text-xl"
-              style={{ color: '#2a4355' }}
-            >
-              DentalVets
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,20 +54,20 @@ const Header = () => {
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:+1234567890"
+              href="tel:+573150340084"
               className="flex items-center space-x-2 transition-colors"
               style={{ color: '#497b9b' }}
             >
               <Phone size={16} />
-              <span className="text-sm font-medium">+1 (234) 567-890</span>
+              <span className="text-sm font-medium">+57 315 0340084</span>
             </a>
             <a
-              href="mailto:info@dentalvets.com"
+              href="mailto:dental.vetsco@gmail.com"
               className="flex items-center space-x-2 transition-colors"
               style={{ color: '#497b9b' }}
             >
               <Mail size={16} />
-              <span className="text-sm font-medium">info@dentalvets.com</span>
+              <span className="text-sm font-medium">dental.vetsco@gmail.com</span>
             </a>
           </div>
 
@@ -99,20 +96,20 @@ const Header = () => {
               ))}
               <div className="pt-4 border-t mt-4">
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+573150340084"
                   className="flex items-center space-x-2 px-3 py-2 hover:bg-gray-50 rounded-md"
                   style={{ color: '#497b9b' }}
                 >
                   <Phone size={16} />
-                  <span>+1 (234) 567-890</span>
+                  <span>+57 315 0340084</span>
                 </a>
                 <a
-                  href="mailto:info@dentalvets.com"
+                  href="mailto:dental.vetsco@gmail.com"
                   className="flex items-center space-x-2 px-3 py-2 hover:bg-gray-50 rounded-md"
                   style={{ color: '#497b9b' }}
                 >
                   <Mail size={16} />
-                  <span>info@dentalvets.com</span>
+                  <span>dental.vetsco@gmail.com</span>
                 </a>
               </div>
             </div>
