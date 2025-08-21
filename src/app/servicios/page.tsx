@@ -10,7 +10,17 @@ import AnimatedSection from '@/components/AnimatedSection';
 
 export default function Servicios() {
   return (
-    <div className="min-h-screen">
+    <div 
+      className="min-h-screen"
+      style={{
+        backgroundImage: 'url(https://res.cloudinary.com/dge1sssip/image/upload/a_-90/a_90/a_hflip/a_vflip/c_crop,ar_9:16/v1755736685/Imagen_cbywxp.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        objectFit: 'cover'
+      }}
+    >
       <Header />
       
       {/* Hero Section */}

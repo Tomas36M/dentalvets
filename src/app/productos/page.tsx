@@ -117,11 +117,21 @@ export default function Productos() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div 
+      className="min-h-screen"
+      style={{
+        backgroundImage: 'url(https://res.cloudinary.com/dge1sssip/image/upload/a_-90/a_90/a_hflip/a_vflip/c_crop,ar_9:16/v1755736685/Imagen_cbywxp.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        objectFit: 'cover'
+      }}
+    >
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 pb-16">
+      <section className="relative bg-white/80 backdrop-blur-sm pt-24 pb-16">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -144,9 +154,9 @@ export default function Productos() {
       </section>
 
       {/* Featured Banner */}
-      <AnimatedSection className="py-8 bg-accent-500">
+      <AnimatedSection className="py-8 bg-white/70 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="text-center text-white">
+          <div className="text-center text-gray-900">
             <p className="text-lg font-semibold">
               🎉 Oferta especial: 20% de descuento en todos los productos | Envío gratis en compras superiores a $50
             </p>
@@ -155,7 +165,7 @@ export default function Productos() {
       </AnimatedSection>
 
       {/* Products Grid */}
-      <section id="productos" className="py-16 bg-white">
+      <section id="productos" className="py-16 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -259,7 +269,7 @@ export default function Productos() {
       </section>
 
       {/* Benefits Section */}
-      <AnimatedSection className="py-16 bg-gray-50">
+      <AnimatedSection className="py-16 bg-white/70 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -313,7 +323,7 @@ export default function Productos() {
       </AnimatedSection>
 
       {/* Care Tips Section */}
-      <AnimatedSection className="py-16 bg-white">
+      <AnimatedSection className="py-16 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -373,19 +383,19 @@ export default function Productos() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="py-16 bg-gradient-to-r from-primary-600 to-primary-700">
+      <AnimatedSection className="py-16 bg-white/60 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-white"
+            className="max-w-3xl mx-auto text-gray-900"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               ¿Necesitas ayuda para elegir?
             </h2>
-            <p className="text-xl text-primary-100 mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               Nuestro equipo está aquí para ayudarte a elegir los mejores productos 
               para las necesidades específicas de tu mascota
             </p>

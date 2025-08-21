@@ -96,20 +96,20 @@ const Header = () => {
               ))}
               <div className="pt-4 border-t mt-4">
                 <a
-                  href="tel:+573150340084"
+                  href="tel:+1234567890"
                   className="flex items-center space-x-2 px-3 py-2 hover:bg-gray-50 rounded-md"
                   style={{ color: '#497b9b' }}
                 >
                   <Phone size={16} />
-                  <span>+57 315 0340084</span>
+                  <span>+1 (234) 567-890</span>
                 </a>
                 <a
-                  href="mailto:dental.vetsco@gmail.com"
+                  href="mailto:info@dentalvets.com"
                   className="flex items-center space-x-2 px-3 py-2 hover:bg-gray-50 rounded-md"
                   style={{ color: '#497b9b' }}
                 >
                   <Mail size={16} />
-                  <span>dental.vetsco@gmail.com</span>
+                  <span>info@dentalvets.com</span>
                 </a>
               </div>
             </div>

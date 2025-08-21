@@ -12,12 +12,22 @@ import { instagramVideos } from '@/data/instagramVideos';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div 
+      className="min-h-screen"
+      style={{
+        backgroundImage: 'url(https://res.cloudinary.com/dge1sssip/image/upload/a_-90/a_90/a_hflip/a_vflip/c_crop,ar_9:16/v1755736685/Imagen_cbywxp.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        objectFit: 'cover'
+      }}
+    >
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-20 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-white/50"></div>
+      {/* Hero Section - Transparente para mostrar fondo */}
+      <section className="relative bg-transparent pt-20 pb-16 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
             <motion.div
@@ -104,7 +114,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section - Fondo blanco sólido */}
       <AnimatedSection className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -136,14 +146,14 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Benefits Section */}
-      <AnimatedSection className="py-16 bg-gray-50">
+      {/* Benefits Section - Transparente para mostrar fondo */}
+      <AnimatedSection className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               ¿Por qué elegir DentalVets?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Somos pioneros en cuidado dental canino con tecnología avanzada y un enfoque humano
             </p>
           </div>
@@ -188,7 +198,7 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - Fondo blanco sólido */}
       <AnimatedSection className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -322,14 +332,14 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Process Section */}
-      <AnimatedSection className="py-16 bg-white">
+      {/* Process Section - Transparente para mostrar fondo */}
+      <AnimatedSection className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Nuestro proceso en 4 pasos
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-white">
               Un procedimiento simple y efectivo diseñado para el bienestar de tu mascota
             </p>
           </div>
@@ -371,15 +381,15 @@ export default function Home() {
                     <div className="hidden md:block absolute top-1/2 left-full w-24 h-0.5 bg-primary-200 transform -translate-y-1/2"></div>
                   )}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-lg font-semibold text-white mb-3">{step.title}</h3>
+                <p className="text-white text-sm leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </AnimatedSection>
 
-      {/* Other Veterinary Services Section */}
+      {/* Other Veterinary Services Section - Fondo blanco sólido */}
       <AnimatedSection className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -461,14 +471,14 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Testimonials Section */}
-      <AnimatedSection className="py-16 bg-gray-50">
+      {/* Testimonials Section - Transparente para mostrar fondo */}
+      <AnimatedSection className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Lo que dicen nuestros clientes
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-white">
               Testimonios reales de dueños satisfechos con nuestro servicio
             </p>
           </div>
@@ -546,8 +556,8 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Instagram Videos Section */}
-      <AnimatedSection className="py-16 bg-gray-50">
+      {/* Instagram Videos Section - Fondo blanco sólido */}
+      <AnimatedSection className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {instagramVideos.map((video, index) => (
@@ -569,14 +579,14 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Team Section */}
-      <AnimatedSection className="py-16 bg-primary-50">
+      {/* Team Section - Transparente para mostrar fondo */}
+      <AnimatedSection className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Nuestro compromiso
             </h2>
-            <p className="text-xl max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
               Somos un equipo de especialistas en salud bucal veterinaria con una misión clara: brindar bienestar sin comprometer la seguridad de tu mascota. Nos dedicamos con pasión a cada procedimiento, usando técnicas seguras, sin anestesia general, y con un enfoque amable y respetuoso hacia los animales.
             </p>
           </div>
@@ -633,20 +643,20 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* CTA Section */}
-      <AnimatedSection className="py-16 bg-gradient-to-r from-primary-600 to-primary-700">
+      {/* CTA Section - Fondo blanco sólido */}
+      <AnimatedSection className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-white"
+            className="max-w-3xl mx-auto text-gray-900"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               ¿Listo para mejorar la salud dental de tu mascota?
             </h2>
-            <p className="text-xl text-primary-100 mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               Agenda una cita gratuita y descubre por qué somos la mejor opción en cuidado dental canino
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
