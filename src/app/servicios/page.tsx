@@ -1,19 +1,12 @@
 'use client';
-
-import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { 
-  CheckCircle, 
-  Clock, 
-  Shield, 
-  Heart, 
-  Sparkles, 
+import {
+  Heart,
+  Shield,
+  CheckCircle,
+  Sparkles,
   Stethoscope,
-  Home,
-  Calendar,
-  Zap,
-  Star,
-  Award
+  Home
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -288,7 +281,6 @@ export default function Servicios() {
           <div className="text-center mt-12">
             <Button 
               href="https://instagram.com/dentalvets" 
-              target="_blank"
               variant="outline"
               size="lg"
               className="bg-white hover:bg-gray-50"
@@ -322,7 +314,6 @@ export default function Servicios() {
                 </Button>
                 <Button 
                   href="https://wa.me/573150340084" 
-                  target="_blank"
                   variant="outline" 
                   size="lg"
                   className="border-white text-white hover:bg-white/10"

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ShoppingCart, Star, Heart, Shield, Sparkles, Award, Package, Truck, Check } from 'lucide-react';
+import { ShoppingCart, Star, Heart, Shield, Sparkles, Award, Truck, Check } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
@@ -123,7 +123,7 @@ export default function Productos() {
                 className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col h-full border border-gray-100"
               >
                 {/* Product Badge */}
-                {(product.bestseller || product.featured) && (
+                {product.bestseller && (
                   <div className="absolute top-4 left-4 z-10">
                     <span className={`px-4 py-1.5 rounded-full text-xs font-bold text-white shadow-md ${
                       product.bestseller ? 'bg-red-500' : 'bg-purple-500'

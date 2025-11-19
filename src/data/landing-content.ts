@@ -1,4 +1,4 @@
-import { Heart, Shield, Clock, Star, CheckCircle, Sparkles, Stethoscope, FlaskConical, Activity, Bone, Syringe, Dna, Scissors, HeartPulse } from 'lucide-react';
+import { Heart, Shield, Clock, Star, Stethoscope, FlaskConical, Activity, Bone, Syringe, Dna, Scissors, HeartPulse } from 'lucide-react';
 
 export const landingContent = {
   hero: {
