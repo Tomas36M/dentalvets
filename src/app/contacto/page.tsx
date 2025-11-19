@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import { 
   Phone, 
@@ -72,27 +73,28 @@ export default function Contacto() {
   };
 
   return (
-    <div 
-      className="min-h-screen"
-      style={{
-        backgroundImage: 'url(https://res.cloudinary.com/dge1sssip/image/upload/v1755739260/Cartel_vertical_adopcio%CC%81n_de_mascotas_moderno_azul_lsbx0a.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-        objectFit: 'cover'
-      }}
-    >
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              ¿Listo para <span className="text-primary-600">transformar</span> la sonrisa de tu mascota?
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://res.cloudinary.com/dge1sssip/image/upload/v1755739260/Cartel_vertical_adopcio%CC%81n_de_mascotas_moderno_azul_lsbx0a.png"
+            alt="Fondo Contacto"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10 text-center text-white">
+          <AnimatedSection className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+              ¿Listo para <span className="text-primary-300">transformar</span> la sonrisa de tu mascota?
             </h1>
-            <p className="text-xl leading-relaxed mb-8">
+            <p className="text-xl leading-relaxed mb-8 font-medium drop-shadow-md text-primary-50">
               Estamos aquí para responder todas tus preguntas y agendar tu cita. 
               ¡El bienestar dental de tu mascota es nuestra prioridad!
             </p>
@@ -101,7 +103,7 @@ export default function Contacto() {
       </section>
 
       {/* Contact Methods */}
-      <AnimatedSection className="py-16 bg-white">
+      <AnimatedSection className="py-16 bg-white -mt-10 relative z-20 rounded-t-3xl shadow-xl mx-4 md:mx-8 border border-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -118,28 +120,31 @@ export default function Contacto() {
                 icon: MessageCircle,
                 title: 'WhatsApp',
                 description: 'Respuesta inmediata',
-                contact: '+1 (234) 567-890',
+                contact: '+57 315 0340084',
                 action: 'Enviar mensaje',
-                href: 'https://wa.me/1234567890?text=Hola! Me gustaría agendar una cita para mi mascota',
-                color: 'bg-green-500 hover:bg-green-600'
+                href: 'https://wa.me/573150340084?text=Hola! Me gustaría agendar una cita para mi mascota',
+                color: 'bg-green-500',
+                hoverColor: 'group-hover:bg-green-600'
               },
               {
                 icon: Phone,
                 title: 'Teléfono',
                 description: 'Lun-Vie 8AM-6PM',
-                contact: '+1 (234) 567-890',
+                contact: '+57 315 0340084',
                 action: 'Llamar ahora',
-                href: 'tel:+1234567890',
-                color: 'bg-blue-500 hover:bg-blue-600'
+                href: 'tel:+573150340084',
+                color: 'bg-blue-500',
+                hoverColor: 'group-hover:bg-blue-600'
               },
               {
                 icon: Mail,
                 title: 'Email',
                 description: 'Respuesta en 24hrs',
-                contact: 'info@dentalvets.com',
+                contact: 'dental.vetsco@gmail.com',
                 action: 'Enviar email',
-                href: 'mailto:info@dentalvets.com',
-                color: 'bg-purple-500 hover:bg-purple-600'
+                href: 'mailto:dental.vetsco@gmail.com',
+                color: 'bg-purple-500',
+                hoverColor: 'group-hover:bg-purple-600'
               },
               {
                 icon: Instagram,
@@ -148,7 +153,8 @@ export default function Contacto() {
                 contact: '@dentalvets',
                 action: 'Seguir cuenta',
                 href: 'https://instagram.com/dentalvets',
-                color: 'bg-pink-500 hover:bg-pink-600'
+                color: 'bg-pink-500',
+                hoverColor: 'group-hover:bg-pink-600'
               },
             ].map((method, index) => (
               <motion.div
@@ -157,20 +163,20 @@ export default function Contacto() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col h-full"
               >
-                <div className="text-center">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${method.color} text-white rounded-full mb-4 group-hover:scale-110 transition-transform`}>
+                <div className="text-center flex flex-col h-full">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 ${method.color} text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform shadow-md`}>
                     <method.icon size={32} />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{method.title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{method.title}</h3>
                   <p className="text-sm text-gray-500 mb-3">{method.description}</p>
-                  <p className="text-gray-700 font-medium mb-4">{method.contact}</p>
+                  <p className="text-gray-700 font-medium mb-6 break-words">{method.contact}</p>
                   <a
                     href={method.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center justify-center w-full px-4 py-2 ${method.color} text-white rounded-lg font-medium transition-all duration-300 hover:scale-105`}
+                    className={`mt-auto inline-flex items-center justify-center w-full px-4 py-3 ${method.color} text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
                   >
                     {method.action}
                   </a>
@@ -182,24 +188,25 @@ export default function Contacto() {
       </AnimatedSection>
 
       {/* Contact Form & Info */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
             {/* Contact Form */}
-            <AnimatedSection className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Agenda tu cita o solicita información
+            <AnimatedSection className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                Agenda tu cita
               </h2>
+              <p className="text-gray-600 mb-8">Déjanos tus datos y te contactaremos a la brevedad.</p>
               
               {submitStatus === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-2"
+                  className="mb-8 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center space-x-3"
                 >
-                  <CheckCircle className="text-green-500" size={20} />
-                  <p className="text-green-700">¡Mensaje enviado exitosamente! Te contactaremos pronto.</p>
+                  <CheckCircle className="text-green-500 flex-shrink-0" size={24} />
+                  <p className="text-green-800 font-medium">¡Mensaje enviado exitosamente! Te contactaremos pronto.</p>
                 </motion.div>
               )}
               
@@ -207,17 +214,17 @@ export default function Contacto() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-2"
+                  className="mb-8 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center space-x-3"
                 >
-                  <AlertCircle className="text-red-500" size={20} />
-                  <p className="text-red-700">Hubo un error al enviar el mensaje. Por favor intenta nuevamente.</p>
+                  <AlertCircle className="text-red-500 flex-shrink-0" size={24} />
+                  <p className="text-red-800 font-medium">Hubo un error al enviar el mensaje. Por favor intenta nuevamente.</p>
                 </motion.div>
               )}
               
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="nombre" className="block text-sm font-semibold text-gray-700 mb-2">
                       Tu nombre *
                     </label>
                     <input
@@ -227,12 +234,12 @@ export default function Contacto() {
                       required
                       value={formData.nombre}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none placeholder-gray-400"
                       placeholder="Ej: María García"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                       Email *
                     </label>
                     <input
@@ -242,14 +249,14 @@ export default function Contacto() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none placeholder-gray-400"
                       placeholder="tu@email.com"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="telefono" className="block text-sm font-semibold text-gray-700 mb-2">
                     Teléfono *
                   </label>
                   <input
@@ -259,15 +266,15 @@ export default function Contacto() {
                     required
                     value={formData.telefono}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                    placeholder="+1 (234) 567-890"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none placeholder-gray-400"
+                    placeholder="+57 315 0340084"
                   />
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
-                    <label htmlFor="nombreMascota" className="block text-sm font-medium text-gray-700 mb-2">
-                      Nombre de tu mascota
+                    <label htmlFor="nombreMascota" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Mascota
                     </label>
                     <input
                       type="text"
@@ -275,13 +282,13 @@ export default function Contacto() {
                       name="nombreMascota"
                       value={formData.nombreMascota}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none placeholder-gray-400"
                       placeholder="Ej: Max"
                     />
                   </div>
                   <div>
-                    <label htmlFor="edadMascota" className="block text-sm font-medium text-gray-700 mb-2">
-                      Edad (años)
+                    <label htmlFor="edadMascota" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Edad
                     </label>
                     <input
                       type="number"
@@ -291,12 +298,12 @@ export default function Contacto() {
                       max="20"
                       value={formData.edadMascota}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none placeholder-gray-400"
                       placeholder="5"
                     />
                   </div>
                   <div>
-                    <label htmlFor="razaMascota" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="razaMascota" className="block text-sm font-semibold text-gray-700 mb-2">
                       Raza
                     </label>
                     <input
@@ -305,32 +312,39 @@ export default function Contacto() {
                       name="razaMascota"
                       value={formData.razaMascota}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                      placeholder="Golden Retriever"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none placeholder-gray-400"
+                      placeholder="Golden"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="tipoServicio" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="tipoServicio" className="block text-sm font-semibold text-gray-700 mb-2">
                     Servicio de interés
                   </label>
-                  <select
-                    id="tipoServicio"
-                    name="tipoServicio"
-                    value={formData.tipoServicio}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                  >
-                    <option value="profilaxis">Profilaxis dental con ultrasonido</option>
-                    <option value="consulta">Consulta dental</option>
-                    <option value="productos">Productos de cuidado</option>
-                    <option value="informacion">Solo información</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="tipoServicio"
+                      name="tipoServicio"
+                      value={formData.tipoServicio}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none appearance-none"
+                    >
+                      <option value="profilaxis">Profilaxis dental con ultrasonido</option>
+                      <option value="consulta">Consulta dental</option>
+                      <option value="productos">Productos de cuidado</option>
+                      <option value="informacion">Solo información</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                      <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="mensaje" className="block text-sm font-semibold text-gray-700 mb-2">
                     Mensaje adicional
                   </label>
                   <textarea
@@ -339,15 +353,15 @@ export default function Contacto() {
                     rows={4}
                     value={formData.mensaje}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
-                    placeholder="Cuéntanos más sobre las necesidades de tu mascota o cualquier pregunta que tengas..."
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none outline-none placeholder-gray-400"
+                    placeholder="Cuéntanos más sobre las necesidades de tu mascota..."
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary-500 hover:bg-primary-600 text-white font-medium py-4 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full bg-primary-500 hover:bg-primary-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   {isSubmitting ? (
                     <>
@@ -368,29 +382,29 @@ export default function Contacto() {
             <div className="space-y-8">
               
               {/* Business Hours */}
-              <AnimatedSection direction="right" className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-primary-100 text-black rounded-full flex items-center justify-center">
+              <AnimatedSection direction="right" className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center">
                     <Clock size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Horarios de atención</h3>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {[
                     { day: 'Lunes - Viernes', hours: '8:00 AM - 6:00 PM' },
                     { day: 'Sábados', hours: '9:00 AM - 4:00 PM' },
                     { day: 'Domingos', hours: 'Solo emergencias' },
                   ].map((schedule, index) => (
-                    <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                      <span className="font-medium text-black">{schedule.day}</span>
-                      <span className="text-black">{schedule.hours}</span>
+                    <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0">
+                      <span className="font-medium text-gray-700">{schedule.day}</span>
+                      <span className="text-gray-500 font-medium">{schedule.hours}</span>
                     </div>
                   ))}
                 </div>
                 
-                <div className="mt-6 p-4 bg-accent-50 rounded-lg">
-                  <p className="text-sm text-black">
+                <div className="mt-6 p-4 bg-primary-50 rounded-xl border border-primary-100">
+                  <p className="text-sm text-primary-800">
                     <strong>Servicio a domicilio:</strong> Nos adaptamos a tu horario. 
                     Disponible 7 días a la semana con cita previa.
                   </p>
@@ -398,50 +412,48 @@ export default function Contacto() {
               </AnimatedSection>
               
               {/* Service Area */}
-              <AnimatedSection direction="right" delay={0.2} className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-primary-100 text-black rounded-full flex items-center justify-center">
+              <AnimatedSection direction="right" delay={0.2} className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center">
                     <MapPin size={24} />
                   </div>
-                  <h3 className="text-xl font-bold text-black">Área de servicio</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Área de servicio</h3>
                 </div>
                 
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-6">
                   Ofrecemos nuestro servicio a domicilio en toda el área metropolitana:
                 </p>
                 
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-center space-x-2">
+                <ul className="space-y-3 text-sm text-gray-700 mb-8">
+                  <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                     <span>Centro de la ciudad y alrededores</span>
                   </li>
-                  <li className="flex items-center space-x-2">
+                  <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                     <span>Zona norte hasta 25km</span>
                   </li>
-                  <li className="flex items-center space-x-2">
+                  <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                     <span>Zona sur hasta 20km</span>
                   </li>
-                  <li className="flex items-center space-x-2">
+                  <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                     <span>Consulta por otras áreas</span>
                   </li>
                 </ul>
                 
-                <div className="mt-6">
-                  <Button 
-                    variant="outline" 
-                    className="w-full text-black hover:bg-primary-50"
-                    href="https://wa.me/1234567890?text=Hola! ¿Ofrecen servicio en mi área?"
-                  >
-                    Consultar disponibilidad en mi zona
-                  </Button>
-                </div>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  href="https://wa.me/573150340084?text=Hola! ¿Ofrecen servicio en mi área?"
+                >
+                  Consultar disponibilidad en mi zona
+                </Button>
               </AnimatedSection>
               
               {/* Social Media */}
-              <AnimatedSection direction="right" delay={0.4} className="bg-white rounded-2xl p-8 shadow-lg">
+              <AnimatedSection direction="right" delay={0.4} className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Síguenos en redes sociales</h3>
                 
                 <div className="space-y-4">
@@ -449,14 +461,14 @@ export default function Contacto() {
                     href="https://instagram.com/dentalvets"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                    className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group border border-transparent hover:border-gray-100"
                   >
-                    <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Instagram size={20} />
+                    <div className="w-12 h-12 bg-pink-500 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-md">
+                      <Instagram size={24} />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">Instagram</p>
-                      <p className="text-sm text-gray-600">Tips diarios y casos de éxito</p>
+                      <p className="font-bold text-gray-900">Instagram</p>
+                      <p className="text-sm text-gray-500">Tips diarios y casos de éxito</p>
                     </div>
                   </a>
                   
@@ -464,14 +476,14 @@ export default function Contacto() {
                     href="https://facebook.com/dentalvets"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                    className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group border border-transparent hover:border-gray-100"
                   >
-                    <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Facebook size={20} />
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-md">
+                      <Facebook size={24} />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">Facebook</p>
-                      <p className="text-sm text-gray-600">Comunidad y educación dental</p>
+                      <p className="font-bold text-gray-900">Facebook</p>
+                      <p className="text-sm text-gray-500">Comunidad y educación dental</p>
                     </div>
                   </a>
                 </div>
@@ -482,9 +494,9 @@ export default function Contacto() {
       </section>
 
       {/* FAQ Section */}
-      <AnimatedSection className="py-16 bg-white">
+      <AnimatedSection className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Preguntas frecuentes
             </h2>
@@ -522,9 +534,9 @@ export default function Contacto() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow"
+                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
                 <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
