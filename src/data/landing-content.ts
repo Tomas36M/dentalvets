@@ -7,7 +7,7 @@ export const landingContent = {
       highlight: "Sonrisas saludables",
       rest: "para tu mejor amigo"
     },
-    description: "Profilaxis dental profesional para perros sin anestesia general, sin curetas y con atención a domicilio. Resultados visibles en solo 40 minutos.",
+    description: "Utilizamos un equipo especializado de ultrasonido que deja el diente más limpio, supra y subgingival, sin curetas que lastimen el diente, realizamos pulido dental con cepillado, prophyjet, remineralización y desensibilización.",
     cta: {
       primary: "Agenda cita con nosotros",
       secondary: "Conoce nuestros servicios"
@@ -24,7 +24,7 @@ export const landingContent = {
   },
   stats: [
     { number: '1,000+', label: 'Perros felices', icon: Heart },
-    { number: '40min', label: 'Duración promedio', icon: Clock },
+    { number: '2 horas', label: 'Duración promedio', icon: Clock },
     { number: '100%', label: 'Sin anestesia general', icon: Shield },
     { number: '5★', label: 'Calificación promedio', icon: Star },
   ],
@@ -41,8 +41,8 @@ export const landingContent = {
       },
       {
         icon: Clock,
-        title: 'Resultados en 40 minutos',
-        description: 'Proceso rápido y eficiente con resultados visibles inmediatamente. Tecnología de ultrasonido avanzada.',
+        title: 'Resultados en 2 horas',
+        description: 'Proceso rápido y eficiente con resultados visibles inmediatamente. Solo necesitamos un espacio de 2*2 y una toma corriente cerca.',
         color: 'text-blue-600',
         bgColor: 'bg-blue-50'
       },
@@ -102,28 +102,28 @@ export const landingContent = {
     ]
   },
   process: {
-    title: "Nuestro proceso en 4 pasos",
-    subtitle: "Un procedimiento simple y efectivo diseñado para el bienestar de tu mascota",
+    title: "Nuestro protocolo de profilaxis dental",
+    subtitle: "Seguimos un riguroso protocolo para garantizar una limpieza completa y segura",
     steps: [
       {
         step: '1',
-        title: 'Evaluación inicial',
-        description: 'Examen general y bucal de nuestros pacientes, determinando sus requerimientos individuales.'
+        title: 'Limpieza del sarro dental',
+        description: 'Limpieza del sarro dental con ultrasonido para eliminar placa y bacterias.'
       },
       {
         step: '2',
-        title: 'Preparación',
-        description: 'Instalación de nuestros equipos especializados y preparación del lugar donde se realizará el procedimiento para generar la mayor comodidad al paciente.'
+        title: 'Cepillado con crema profiláctica',
+        description: 'Cepillado con crema profiláctica para remineralizar los dientes y prevenir porosidades.'
       },
       {
         step: '3',
-        title: 'Limpieza dental',
-        description: 'Realizamos la profilaxis con ultrasonido y pasta profiláctica removiendo sarro y placa bacteriana. Revisión pieza por pieza para determinar que no hay ningún tipo de dolor/sensibilidad o cualquier clase de afección bucal.'
+        title: 'Aplicación de polvo bactericida',
+        description: 'Aplicación de un polvo bactericida para eliminar bacterias y prevenir infecciones.'
       },
       {
         step: '4',
-        title: 'Cuidados post-limpieza',
-        description: 'Proporcionamos recomendaciones para mantener la salud dental de tu mascota desde casa para que su profilaxis dure el mayor tiempo posible.'
+        title: 'Desensibilización',
+        description: 'Aplicación de un desensibilizante para reducir la sensibilidad dental después del tratamiento.'
       },
     ]
   },

@@ -32,7 +32,7 @@ const Header = () => {
                 className="text-xs"
                 style={{ color: '#497b9b' }}
               >
-                Odontólogos Veterinarios
+                Dentistas Veterinarios
               </span>
             </div>
           </Link>

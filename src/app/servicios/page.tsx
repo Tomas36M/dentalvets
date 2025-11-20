@@ -12,9 +12,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import AnimatedSection from '@/components/AnimatedSection';
-import InstagramVideo from '@/components/InstagramVideo';
+import InstagramEmbed from '@/components/InstagramEmbed';
 import { instagramVideos } from '@/data/instagramVideos';
-
+import perritoDental from '../../../public/perritofeliz.jpg';
+import perritoAntes from '../../../public/perritoAntes.jpeg'
+import perritoDespues from '../../../public/perritoDespues.jpeg'
 export default function Servicios() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
@@ -27,7 +29,7 @@ export default function Servicios() {
             src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2688&auto=format&fit=crop"
             alt="Perro feliz en consulta"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-60"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-gray-50"></div>
@@ -66,7 +68,7 @@ export default function Servicios() {
             <AnimatedSection direction="left">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500">
                 <Image
-                  src="https://res.cloudinary.com/dge1sssip/image/upload/v1755739260/Cartel_vertical_adopcio%CC%81n_de_mascotas_moderno_azul_lsbx0a.png"
+                  src={perritoDental}
                   alt="Profilaxis Dental"
                   width={600}
                   height={800}
@@ -84,7 +86,7 @@ export default function Servicios() {
                 Profilaxis Dental <span className="text-primary-500">Sin Anestesia</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Nuestro servicio estrella utiliza tecnología de ultrasonido de última generación para eliminar el sarro y la placa bacteriana sin necesidad de sedar a tu mascota. Es un procedimiento seguro, rápido y libre de estrés.
+                Nuestro servicio estrella utiliza tecnología de ultrasonido de última generación para eliminar el sarro y la placa bacteriana sin necesidad de anestesia general. Es un procedimiento seguro, rápido y libre de estrés.
               </p>
               
               <div className="space-y-6">
@@ -212,8 +214,8 @@ export default function Servicios() {
               },
               {
                 title: 'Caso 2: Gingivitis Inicial',
-                before: 'https://res.cloudinary.com/dge1sssip/image/upload/v1755074991/WhatsApp_Image_2025-08-12_at_21.31.59_pj1lib.jpg',
-                after: 'https://res.cloudinary.com/dge1sssip/image/upload/v1755074980/WhatsApp_Image_2025-08-12_at_21.31.59_1_wfduj4.jpg',
+                before: perritoAntes,
+                after: perritoDespues,
                 desc: 'Eliminación de inflamación y bacterias causantes del mal aliento.'
               }
             ].map((caso, index) => (
@@ -255,37 +257,90 @@ export default function Servicios() {
       </section>
 
       {/* Instagram Videos */}
-      <section className="py-20 bg-primary-50">
+      <section className="py-20 bg-gradient-to-b from-primary-50 to-white">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nuestros Pacientes Felices
+            <div className="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-sm font-bold mb-4 shadow-sm">
+              Instagram
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Nuestros Pacientes <span className="text-primary-500">Felices</span>
             </h2>
-            <p className="text-xl text-gray-600">
-              Mira cómo transformamos sonrisas todos los días
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Mira cómo transformamos sonrisas todos los días 🐾
             </p>
           </AnimatedSection>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {instagramVideos.map((video, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                <InstagramVideo 
-                  embedCode={video.embedCode} 
-                  title={video.title} 
-                  description={video.description}
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+            {instagramVideos.slice(0, 3).map((video, index) => (
+              <AnimatedSection key={index} delay={index * 0.1} className="h-full">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-gray-100 h-full flex flex-col">
+                  {/* Header de la tarjeta tipo Instagram */}
+                  <div className="px-4 py-3 border-b border-gray-50 flex items-center justify-between bg-white">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 p-[2px]">
+                        <div className="w-full h-full rounded-full bg-white p-[2px]">
+                          <Image 
+                            src="https://res.cloudinary.com/dge1sssip/image/upload/v1755069850/DENTALVETS_logo.jpg_ny2gel.jpg" 
+                            alt="Logo" 
+                            width={32} 
+                            height={32} 
+                            className="rounded-full object-cover w-full h-full"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-xs font-bold text-gray-900">dental.vets</span>
+                        <span className="text-[10px] text-gray-500">Original Audio</span>
+                      </div>
+                    </div>
+                    <a 
+                      href="https://instagram.com/dental.vets" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary-500 hover:text-primary-600 transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                  </div>
+
+                  {/* Contenedor del Video */}
+                  <div className="flex-grow bg-gray-50 flex justify-center items-center overflow-hidden relative min-h-[450px]">
+                    <div className="w-full flex justify-center transform scale-[0.85] origin-top -mb-20 mt-2">
+                      <InstagramEmbed 
+                        embedCode={video.embedCode} 
+                        className="shadow-sm"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Pie de la tarjeta */}
+                  <div className="p-5 bg-white border-t border-gray-50 relative z-10">
+                    <div className="flex gap-4 mb-3">
+                      <Heart className="w-6 h-6 text-gray-400 hover:text-red-500 transition-colors cursor-pointer" />
+                      <div className="w-6 h-6 -rotate-90">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-gray-400"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                      </div>
+                      <div className="ml-auto">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-gray-400"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-lg mb-1">{video.title}</h3>
+                    <p className="text-gray-600 text-sm line-clamp-2">{video.description}</p>
+                  </div>
+                </div>
               </AnimatedSection>
             ))}
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center">
             <Button 
-              href="https://instagram.com/dentalvets" 
+              href="https://instagram.com/dental.vets" 
               variant="outline"
               size="lg"
-              className="bg-white hover:bg-gray-50"
+              className="bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all"
             >
-              Ver más en Instagram
+              📱 Síguenos en Instagram
             </Button>
           </div>
         </div>

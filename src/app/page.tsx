@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { CheckCircle, Star, Sparkles } from 'lucide-react';
+import { CheckCircle, Star, Sparkles, Heart } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
@@ -288,6 +288,47 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
+      {/* Love & Care Section */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection direction="left" className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-primary-100 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                <Image
+                  src="/ana.png"
+                  alt="Dra. Ana con paciente feliz"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -bottom-6 -right-6 bg-yellow-100 p-4 rounded-full shadow-lg z-10">
+                <Heart className="text-yellow-500 fill-yellow-500 w-8 h-8" />
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection direction="right" className="space-y-6">
+              <div className="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-sm font-bold mb-2 shadow-sm">
+                Amor y Dedicación
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                Más que un servicio dental, <br/>
+                <span className="text-primary-500">es amor por tu mascota</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                En DentalVets, entendemos que tu mascota es un miembro más de la familia. Por eso, cada procedimiento se realiza con una dosis extra de cariño, paciencia y respeto. Nos tomamos el tiempo necesario para que tu peludo se sienta seguro, tranquilo y mimado, creando una experiencia positiva que va más allá de la salud dental. Porque verlos felices y saludables es nuestra mayor recompensa.
+              </p>
+              <div className="pt-4">
+                <Button href="/contacto" className="shadow-lg">
+                  Conoce a nuestro equipo
+                </Button>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <AnimatedSection className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -348,12 +389,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Resultados Reales
             </h2>
-            <p className="text-xl text-gray-600">
-              Mira cómo transformamos sonrisas en Instagram
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {instagramVideos.map((video, index) => (
+            {instagramVideos.slice(0, 2).map((video, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -435,7 +473,7 @@ export default function Home() {
               {landingContent.cta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="primary" href="https://wa.me/573150340084" className="shadow-xl shadow-primary-500/30 text-lg px-10">
+              <Button size="lg" variant="primary" href="https://wa.me/573150340084" className="shadow-xl shadow-primary-500/30 text-white px-10">
                 {landingContent.cta.primary}
               </Button>
               <Button size="lg" variant="outline" href="/contacto" className="text-lg px-10">

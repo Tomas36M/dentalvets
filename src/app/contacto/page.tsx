@@ -152,7 +152,7 @@ export default function Contacto() {
                 description: 'Síguenos para tips',
                 contact: '@dentalvets',
                 action: 'Seguir cuenta',
-                href: 'https://instagram.com/dentalvets',
+                href: 'https://www.instagram.com/dental.vets/',
                 color: 'bg-pink-500',
                 hoverColor: 'group-hover:bg-pink-600'
               },
@@ -458,7 +458,7 @@ export default function Contacto() {
                 
                 <div className="space-y-4">
                   <a
-                    href="https://instagram.com/dentalvets"
+                    href="https://www.instagram.com/dental.vets/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group border border-transparent hover:border-gray-100"
@@ -473,7 +473,7 @@ export default function Contacto() {
                   </a>
                   
                   <a
-                    href="https://facebook.com/dentalvets"
+                    href="https://www.facebook.com/profile.php?id=61563836805202"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group border border-transparent hover:border-gray-100"

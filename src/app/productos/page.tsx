@@ -7,43 +7,79 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import AnimatedSection from '@/components/AnimatedSection';
+import cepillo1 from '../../../public/cepillos1.png'
+import cepillo2 from '../../../public/cepillo2.png'
 
 export default function Productos() {
   const products = [
     {
       id: 1,
-      name: 'Spry Dental',
-      price: '$45.000',
-      originalPrice: '$55.000',
+      name: 'Cepillo de 3ml',
+      price: '$25.000',
+      originalPrice: '$30.000',
       image: '/spry-dental.jpg',
       rating: 5.0,
       reviews: 89,
-      description: 'Spray dental profesional de alta calidad para el cuidado bucal de tu mascota. Fórmula especializada que combate bacterias y refresca el aliento.',
+      description: 'Nuevo! Cepillo dental para perros y gatos con gel antibacteriano y desinflamatorio. Cerdas suaves y pequeñas para cuidar encías y dientes. Fácil de usar: solo gira el aplicador y listo!',
       features: [
-        'Elimina bacterias orales efectivamente',
-        'Refresca el aliento al instante',
-        'Fórmula veterinaria aprobada',
-        'Fácil aplicación diaria'
+        'Gel antibacteriano y desinflamatorio',
+        'Cerdas suaves y pequeñas',
+        'Cuida encías y dientes delicadamente',
+        'Fácil aplicación - solo gira el aplicador'
       ],
       category: 'Higiene Dental',
       bestseller: true
     },
     {
       id: 2,
-      name: 'Snacks Dentales',
-      price: '$35.000',
-      originalPrice: '$42.000',
-      image: '/snacks-dentales.jpg',
-      rating: 4.9,
-      reviews: 134,
-      description: 'Deliciosos snacks dentales que tu perro amará. Ayudan a limpiar los dientes de forma natural mientras disfruta de un premio saludable.',
+      name: 'Cepillo de 2ml',
+      price: '$23.000',
+      originalPrice: '$28.000',
+      image: cepillo1,
+      rating: 5.0,
+      reviews: 45,
+      description: 'Versión compacta de nuestro cepillo dental. Ideal para razas pequeñas.',
       features: [
-        'Textura especial que limpia dientes',
-        'Ingredientes 100% naturales',
-        'Ayuda a reducir placa y sarro',
-        'Rico en vitaminas y minerales'
+        'Gel antibacteriano',
+        'Tamaño compacto',
+        'Fácil de usar'
       ],
-      category: 'Snacks Funcionales',
+      category: 'Higiene Dental',
+      bestseller: false
+    },
+    {
+      id: 3,
+      name: 'Cepillo de 5ml',
+      price: '$30.000',
+      originalPrice: '$35.000',
+      image: cepillo2,
+      rating: 5.0,
+      reviews: 62,
+      description: 'Mayor contenido para un tratamiento más duradero. Perfecto para razas grandes.',
+      features: [
+        'Mayor capacidad',
+        'Gel antibacteriano',
+        'Larga duración'
+      ],
+      category: 'Higiene Dental',
+      bestseller: false
+    },
+    {
+      id: 4,
+      name: 'Snack para tu mascota',
+      price: '$18.000',
+      originalPrice: '$22.000',
+      image: '/snacks-dentales.jpg',
+      rating: 5.0,
+      reviews: 134,
+      description: 'Patas de pollo deshidratadas, ricas en proteínas y bajas en grasas. Ayudan a reducir el sarro y refrescan el aliento de tu mascota mientras disfruta de un delicioso snack.',
+      features: [
+        'Ricas en proteínas',
+        'Bajas en grasas',
+        'Ayudan a reducir el sarro',
+        'Refrescan el aliento'
+      ],
+      category: 'Snacks Dentales',
       bestseller: true
     }
   ];
@@ -59,7 +95,7 @@ export default function Productos() {
             src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2698&auto=format&fit=crop"
             alt="Perro con juguete"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-60"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-gray-50"></div>
@@ -94,7 +130,7 @@ export default function Productos() {
         <AnimatedSection className="bg-primary-600 rounded-2xl p-6 shadow-xl text-white text-center transform hover:-translate-y-1 transition-transform duration-300">
           <p className="text-lg font-bold flex items-center justify-center gap-2">
             <Sparkles className="text-yellow-300" />
-            Oferta especial: 20% de descuento en todos los productos | Envío gratis en compras superiores a $50
+            Oferta especial: 20% de descuento en todos los productos | No incluyen envío
             <Sparkles className="text-yellow-300" />
           </p>
         </AnimatedSection>
@@ -242,8 +278,8 @@ export default function Productos() {
               },
               {
                 icon: Truck,
-                title: 'Envío rápido',
-                description: 'Envío gratuito en compras superiores a $50 y entrega en 24-48 horas.'
+                title: 'Envío seguro',
+                description: 'Envíos a todo el país con las mejores transportadoras.'
               },
             ].map((benefit, index) => (
               <AnimatedSection
@@ -282,7 +318,8 @@ export default function Productos() {
                   'Utiliza productos específicos para mascotas, nunca pasta dental humana',
                   'Proporciona snacks dentales funcionales como premio',
                   'Revisa regularmente la boca de tu mascota en busca de signos de problemas',
-                  'Programa limpiezas profesionales cada 6-12 meses'
+                  'Programa limpiezas profesionales cada 6-12 meses',
+                  'Los dientes no se limpian con huesos ni con palos. Eso predispone a riesgos de fracturas dentales.'
                 ].map((tip, index) => (
                   <div key={index} className="flex items-start space-x-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                     <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold shadow-md">

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Instagram, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, MessageCircle, Facebook } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -15,12 +15,11 @@ const Footer = () => {
               <span className="text-2xl font-bold">DentalVets</span>
             </div>
             <p className="text-primary-100 mb-6 max-w-md">
-              Especialistas en salud dental canina. Profilaxis sin anestesia, sin curetas, 
-              con atención a domicilio. Cuidamos la sonrisa de tu mejor amigo.
+              Especialistas en salud dental canina y felina. Profilaxis dental profesional para perros y gatos sin anestesia general, sin curetas y con atención a domicilio. Resultados visibles en solo 2 horas. Cuidamos la sonrisa de tu mejor amigo.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com/dentalvets"
+                href="https://www.instagram.com/dental.vets/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-500 transition-colors"
@@ -28,7 +27,15 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://tiktok.com/@dentalvets"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
+              >
+                <Facebook size={20} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@dentalvets4?_r=1&_t=ZS-91XvSpThk2y"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
