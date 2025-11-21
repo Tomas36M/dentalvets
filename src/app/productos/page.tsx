@@ -85,8 +85,8 @@ export default function Productos() {
     {
       id: 5,
       name: 'Snack para tu mascota',
-      price: '$18.000',
-      originalPrice: '$22.000',
+      price: '$25.000',
+      originalPrice: '$30.000',
       image: '/snacks-dentales.jpg',
       rating: 5.0,
       reviews: 134,

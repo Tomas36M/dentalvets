@@ -53,7 +53,6 @@ const InstagramEmbed = ({ embedCode, className = '' }: InstagramEmbedProps) => {
     // Load Instagram embed script only when visible
     const loadScript = () => {
       if (window.instgrm) {
-        setScriptLoaded(true);
         // Use requestAnimationFrame to avoid forced reflow
         requestAnimationFrame(() => {
           window.instgrm?.Embeds.process();
@@ -66,7 +65,6 @@ const InstagramEmbed = ({ embedCode, className = '' }: InstagramEmbedProps) => {
       script.async = true;
       script.defer = true;
       script.onload = () => {
-        setScriptLoaded(true);
         requestAnimationFrame(() => {
           window.instgrm?.Embeds.process();
         });
