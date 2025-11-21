@@ -17,6 +17,7 @@ import { instagramVideos } from '@/data/instagramVideos';
 import perritoDental from '../../../public/perritofeliz.jpg';
 import perritoAntes from '../../../public/perritoAntes.jpeg'
 import perritoDespues from '../../../public/perritoDespues.jpeg'
+
 export default function Servicios() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">

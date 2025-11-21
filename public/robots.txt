@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://dentalvets.com/sitemap.xml
+Sitemap: https://dentalvets.com.co/sitemap.xml
 
 # Disallow admin areas (if any in the future)
 Disallow: /admin/

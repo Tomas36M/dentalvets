@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Extend Window interface for TypeScript
 declare global {
@@ -20,31 +20,78 @@ interface InstagramEmbedProps {
 
 const InstagramEmbed = ({ embedCode, className = '' }: InstagramEmbedProps) => {
   const embedRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Load Instagram embed script if not already loaded
-    if (!window.instgrm) {
+    // Intersection Observer for lazy loading
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        rootMargin: '100px', // Load 100px before visible
+      }
+    );
+
+    if (embedRef.current) {
+      observer.observe(embedRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    // Load Instagram embed script only when visible
+    const loadScript = () => {
+      if (window.instgrm) {
+        setScriptLoaded(true);
+        // Use requestAnimationFrame to avoid forced reflow
+        requestAnimationFrame(() => {
+          window.instgrm?.Embeds.process();
+        });
+        return;
+      }
+
       const script = document.createElement('script');
-      script.src = '//www.instagram.com/embed.js';
+      script.src = 'https://www.instagram.com/embed.js';
       script.async = true;
+      script.defer = true;
       script.onload = () => {
-        if (window.instgrm) {
-          window.instgrm.Embeds.process();
-        }
+        setScriptLoaded(true);
+        requestAnimationFrame(() => {
+          window.instgrm?.Embeds.process();
+        });
       };
       document.body.appendChild(script);
-    } else {
-      // Process embeds if script is already loaded
-      window.instgrm.Embeds.process();
-    }
-  }, [embedCode]);
+    };
+
+    // Delay script loading to avoid blocking initial render
+    const timer = setTimeout(loadScript, 100);
+
+    return () => clearTimeout(timer);
+  }, [isVisible]);
 
   return (
     <div 
       ref={embedRef}
       className={`instagram-embed-container ${className}`}
-      dangerouslySetInnerHTML={{ __html: embedCode }}
-    />
+      style={{ minHeight: isVisible ? undefined : '400px' }}
+    >
+      {isVisible ? (
+        <div dangerouslySetInnerHTML={{ __html: embedCode }} />
+      ) : (
+        <div className="animate-pulse bg-gray-200 w-full h-[400px] rounded-xl" />
+      )}
+    </div>
   );
 };
 

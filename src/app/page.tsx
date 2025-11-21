@@ -53,6 +53,8 @@ export default function Home() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            quality={85}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
         </div>
@@ -391,6 +393,8 @@ export default function Home() {
                       alt={image.alt}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>

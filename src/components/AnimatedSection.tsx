@@ -27,13 +27,14 @@ const AnimatedSection = ({
     <motion.div
       initial={directionVariants[direction]}
       whileInView={{ x: 0, y: 0, opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px", amount: 0.1 }}
       transition={{ 
-        duration: 0.6, 
+        duration: 0.5, 
         delay,
-        ease: [0.25, 0.25, 0.25, 0.75]
+        ease: [0.25, 0.1, 0.25, 1]
       }}
       className={className}
+      style={{ willChange: 'transform, opacity' }}
     >
       {children}
     </motion.div>

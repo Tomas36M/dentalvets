@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
-    name: 'DentalVets - Profilaxis Dental para Perros',
+    name: 'DentalVets - Limpieza Dental para Perros y Gatos sin Anestesia',
     short_name: 'DentalVets',
-    description: 'Servicio profesional de profilaxis dental para perros sin anestesia y sin curetas. Atención a domicilio con ultrasonido.',
+    description: 'Profilaxis dental profesional para perros y gatos sin anestesia en Bogotá. Servicio a domicilio con ultrasonido.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
