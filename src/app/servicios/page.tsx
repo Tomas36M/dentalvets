@@ -29,7 +29,7 @@ export default function Servicios() {
             src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2688&auto=format&fit=crop"
             alt="Perro feliz en consulta"
             fill
-            className="object-cover opacity-60"
+            className="object-cover opacity-80"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-gray-50"></div>
@@ -217,6 +217,18 @@ export default function Servicios() {
                 before: perritoAntes,
                 after: perritoDespues,
                 desc: 'Eliminación de inflamación y bacterias causantes del mal aliento.'
+              },
+              {
+                title: 'Caso 3: Limpieza Profunda',
+                before: '/antes1.jpeg',
+                after: '/despues1.jpeg',
+                desc: 'Eliminación completa de placa y sarro acumulado.'
+              },
+              {
+                title: 'Caso 4: Recuperación Dental',
+                before: '/antes2.jpeg',
+                after: '/despues2.jpeg',
+                desc: 'Restauración de la salud bucal y encías saludables.'
               }
             ].map((caso, index) => (
               <AnimatedSection key={index} delay={index * 0.2} className="bg-gray-50 rounded-3xl overflow-hidden shadow-lg border border-gray-100">

@@ -1,15 +1,13 @@
 'use client';
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
-  onClick?: () => void;
   href?: string;
-  type?: 'button' | 'submit' | 'reset';
-  disabled?: boolean;
-  style?: React.CSSProperties;
+  // We don't need to explicitly list onClick, type, disabled, style as they are in ButtonHTMLAttributes
+  // But we might need to handle the fact that it could be an anchor
 }
 
 const Button = ({ 
@@ -17,12 +15,10 @@ const Button = ({
   variant = 'primary', 
   size = 'md', 
   className = '',
-  onClick,
   href,
   type = 'button',
-  disabled = false,
-  style
-}: ButtonProps) => {
+  ...props
+}: ButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variantClasses = {
@@ -50,7 +46,7 @@ const Button = ({
   
   if (href) {
     return (
-      <a href={href} className={classes} style={style}>
+      <a href={href} className={classes} {...props}>
         {children}
       </a>
     );
@@ -60,9 +56,7 @@ const Button = ({
     <button 
       type={type}
       className={classes} 
-      onClick={onClick}
-      disabled={disabled}
-      style={style}
+      {...props}
     >
       {children}
     </button>

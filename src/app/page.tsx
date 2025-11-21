@@ -10,6 +10,12 @@ import AnimatedSection from '@/components/AnimatedSection';
 import InstagramEmbed from '@/components/InstagramEmbed';
 import { instagramVideos } from '@/data/instagramVideos';
 import { landingContent } from '@/data/landing-content';
+import foto1 from '../../public/fotogaleria1.jpeg';
+import foto2 from '../../public/fotogatico.png';
+import foto3 from '../../public/fotoperritofeliz.jpeg';
+import foto4 from '../../public/fotoprodcuto1.jpeg';
+import foto5 from '../../public/perritoconsnacks.jpeg';
+import foto6 from '../../public/fotoproducto2.jpeg';
 
 export default function Home() {
   const containerVariants = {
@@ -325,6 +331,87 @@ export default function Home() {
                 </Button>
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Pet Gallery Section */}
+      <section className="py-20 bg-gradient-to-b from-primary-50 to-white">
+        <div className="container mx-auto px-4">
+          <AnimatedSection className="text-center mb-16">
+            <div className="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-sm font-bold mb-4 shadow-sm">
+              Galería
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Sonrisas que Inspiran
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Cada sonrisa es una historia de salud y amor
+            </p>
+          </AnimatedSection>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {[
+              {
+                src: foto1,
+                alt: 'Perrito durante cepillado dental',
+                caption: 'Complementa su cepillado con nuestro enjuague dental'
+              },
+              {
+                src: foto2,
+                alt: 'Gatito con snack dental',
+                caption: 'Snacks saludables que cuidan sus dientes'
+              },
+              {
+                src: foto3,
+                alt: 'Perrito feliz con pelota',
+                caption: 'Felices y saludables después de su limpieza'
+              },
+              {
+                src: foto4,
+                alt: 'Perrito con productos DentalVets',
+                caption: 'Emocionado por sus nuevos productos'
+              },
+              {
+                src: foto5,
+                alt: 'Snacks de patas de pollo',
+                caption: 'Snacks naturales que ayudan a reducir el sarro'
+              },
+              {
+                src: foto6,
+                alt: 'Patas de pollo deshidratadas',
+                caption: 'Adiós al sarro de forma natural'
+              }
+            ].map((image, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <div className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                  <div className="relative h-80 overflow-hidden">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-sm font-semibold leading-relaxed drop-shadow-lg">
+                      {image.caption}
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              href="https://instagram.com/dental.vets" 
+              size="lg"
+              className="shadow-lg"
+            >
+              📸 Ver más en Instagram
+            </Button>
           </div>
         </div>
       </section>

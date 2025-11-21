@@ -66,6 +66,24 @@ export default function Productos() {
     },
     {
       id: 4,
+      name: 'Spray con Enjuague',
+      price: '$18.000',
+      originalPrice: '$22.000',
+      image: '/fotogaleria1.jpeg',
+      rating: 5.0,
+      reviews: 78,
+      description: 'Enjuague dental en spray para refrescar, proteger y fortalecer la salud oral de tu mascota. Complementa el cepillado de forma fácil y rápida.',
+      features: [
+        'Refresca el aliento',
+        'Protege encías y dientes',
+        'Fácil aplicación en spray',
+        'Fortalece la salud oral'
+      ],
+      category: 'Higiene Dental',
+      bestseller: false
+    },
+    {
+      id: 5,
       name: 'Snack para tu mascota',
       price: '$18.000',
       originalPrice: '$22.000',
@@ -348,7 +366,15 @@ export default function Productos() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Guía de Cuidado Dental</h3>
                   <p className="text-gray-600 mb-8">Descarga nuestra guía completa gratuita en PDF</p>
-                  <Button variant="outline" className="w-full">Descargar PDF</Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    href="/guia-cuidado-dental.pdf"
+                    download="Guia-Cuidado-Dental-DentalVets.pdf"
+                    target="_blank"
+                  >
+                    Descargar PDF
+                  </Button>
                 </div>
               </div>
               
