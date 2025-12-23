@@ -49,8 +49,10 @@ export const metadata: Metadata = {
     description: "Profilaxis dental profesional para perros y gatos sin anestesia en Bogotá. Atención a domicilio. Resultados en 2 horas.",
     images: ["https://dentalvets.com.co/dentalvets-logo.jpg"],
   },
-  verification: {
-    google: "tu-codigo-de-verificacion-aqui",
+  icons: {
+    icon: "/dientesito.png",
+    shortcut: "/dientesito.png",
+    apple: "/dientesito.png",
   },
 };
 
