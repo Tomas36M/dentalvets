@@ -42,9 +42,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+      <section className="relative pt-24 pb-16 lg:pt-20 lg:pb-0 overflow-hidden lg:h-screen lg:flex lg:items-center">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -59,15 +59,15 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+        <div className="container mx-auto px-4 relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-6 lg:space-y-5"
             >
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-5">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -77,19 +77,19 @@ export default function Home() {
                   <Sparkles size={16} className="text-yellow-400" />
                   <span>{landingContent.hero.badge}</span>
                 </motion.div>
-                
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+
+                <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white drop-shadow-lg">
                   <span className="text-primary-300">{landingContent.hero.title.highlight}</span> <br />
                   {landingContent.hero.title.rest}
                 </h1>
-                
-                <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 shadow-xl max-w-xl">
-                  <p className="text-xl leading-relaxed text-white font-medium">
+
+                <div className="p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 shadow-xl max-w-xl">
+                  <p className="text-lg leading-relaxed text-white font-medium">
                     {landingContent.hero.description}
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" href="https://wa.me/573150340084" className="shadow-xl shadow-primary-900/20">
                   {landingContent.hero.cta.primary}
@@ -98,7 +98,7 @@ export default function Home() {
                   {landingContent.hero.cta.secondary}
                 </Button>
               </div>
-              
+
               <div className="flex flex-wrap gap-4 text-sm font-medium">
                 {landingContent.hero.features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
@@ -108,25 +108,25 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
+              className="relative hidden lg:block max-w-md mx-auto"
             >
               <div className="relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-500 ease-out">
                 <div className="absolute inset-0 bg-primary-500 rounded-3xl transform translate-x-4 translate-y-4 opacity-20"></div>
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
-                  <Image 
+                  <Image
                     src="https://res.cloudinary.com/dge1sssip/image/upload/v1755069850/DENTALVETS_logo.jpg_ny2gel.jpg"
                     alt="Veterinaria con perrito feliz"
-                    width={600}
-                    height={400}
+                    width={500}
+                    height={350}
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                
+
                 {/* Floating Badge */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
@@ -182,8 +182,8 @@ export default function Home() {
               {landingContent.benefits.subtitle}
             </p>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -230,7 +230,7 @@ export default function Home() {
               {landingContent.process.subtitle}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {landingContent.process.steps.map((step, index) => (
               <motion.div
@@ -250,7 +250,7 @@ export default function Home() {
                       <div className="hidden md:block absolute top-1/2 left-full w-full h-0.5 bg-white/20 transform -translate-y-1/2 -translate-x-4"></div>
                     )}
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-primary-100 text-sm leading-relaxed">{step.description}</p>
                 </div>
@@ -271,7 +271,7 @@ export default function Home() {
               {landingContent.services.subtitle}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {landingContent.services.items.map((service, index) => (
               <motion.div
@@ -287,7 +287,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" href="https://wa.me/573150340084">
               Consulta por otros servicios
@@ -321,7 +321,7 @@ export default function Home() {
                 Amor y Dedicación
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                Más que un servicio dental, <br/>
+                Más que un servicio dental, <br />
                 <span className="text-primary-500">es amor por tu mascota</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -351,7 +351,7 @@ export default function Home() {
               Cada sonrisa es una historia de salud y amor
             </p>
           </AnimatedSection>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {[
               {
@@ -407,10 +407,10 @@ export default function Home() {
               </AnimatedSection>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
-            <Button 
-              href="https://instagram.com/dental.vets" 
+            <Button
+              href="https://instagram.com/dental.vets"
               size="lg"
               className="shadow-lg"
             >
@@ -431,7 +431,7 @@ export default function Home() {
               {landingContent.testimonials.subtitle}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {landingContent.testimonials.items.map((testimonial, index) => (
               <motion.div
@@ -447,11 +447,11 @@ export default function Home() {
                     <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                
+
                 <p className="text-gray-700 italic mb-6 flex-grow leading-relaxed">
                   &ldquo;{testimonial.comment}&rdquo;
                 </p>
-                
+
                 <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
                   <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 font-bold">
                     {testimonial.name.charAt(0)}
@@ -464,7 +464,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
             <Button size="lg" href="https://wa.me/573150340084" className="shadow-lg shadow-primary-500/30">
               ¡Únete a nuestros clientes satisfechos!
@@ -491,7 +491,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
               >
-                <InstagramEmbed 
+                <InstagramEmbed
                   embedCode={video.embedCode}
                   className="w-full"
                 />
@@ -504,14 +504,14 @@ export default function Home() {
       {/* Commitment Section */}
       <AnimatedSection className="py-20 bg-primary-900 text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
-           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-             <defs>
-               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                 <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
-               </pattern>
-             </defs>
-             <rect width="100%" height="100%" fill="url(#grid)" />
-           </svg>
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -523,7 +523,7 @@ export default function Home() {
               {landingContent.commitment.description}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {landingContent.commitment.items.map((item, index) => (
               <motion.div
