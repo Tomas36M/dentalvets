@@ -49,11 +49,6 @@ export const metadata: Metadata = {
     description: "Profilaxis dental profesional para perros y gatos sin anestesia en Bogotá. Atención a domicilio. Resultados en 2 horas.",
     images: ["https://dentalvets.com.co/dentalvets-logo.jpg"],
   },
-  icons: {
-    icon: "/dientesito.png",
-    shortcut: "/dientesito.png",
-    apple: "/dientesito.png",
-  },
 };
 
 export default function RootLayout({
@@ -70,10 +65,6 @@ export default function RootLayout({
         <meta name="geo.placename" content="Bogotá" />
         <meta name="geo.position" content="4.710989;-74.072092" />
         <meta name="ICBM" content="4.710989, -74.072092" />
-        {/* PWA */}
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
         {/* Preconnect to third-party origins */}
         <link rel="preconnect" href="https://www.instagram.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://static.cdninstagram.com" crossOrigin="anonymous" />
